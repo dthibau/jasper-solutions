@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="loggedin" pageWidth="450" pageHeight="400" columnWidth="200" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="89da27c7-12df-4ad8-bc28-65d37f9621ec">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8081/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/loggedinuserroles"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/loggedinuserroles_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<parameter name="LoggedInUserRoles" class="java.util.Collection" nestedType="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 1 AS test]]>
+	</queryString>
+	<field name="test" class="java.lang.Integer"/>
+	<title>
+		<band height="198" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="30" uuid="95e0c940-edf1-4c4e-aa23-ab5e91479082">
+					<printWhenExpression><![CDATA[($P{LoggedInUserRoles}.contains("ROLE_ADMINISTRATOR")) ? new Boolean(true) : new Boolean(false)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Admin test matches]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="100" y="100" width="256" height="78" uuid="f5882fb4-8439-4cce-a43c-38f6b0307bdc"/>
+			</ellipse>
+			<staticText>
+				<reportElement x="74" y="61" width="100" height="30" uuid="a7f856b2-c8ec-442f-9787-25ef22c70b59"/>
+				<text><![CDATA[Sous-raqpporte]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

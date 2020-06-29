@@ -1,0 +1,44 @@
+<Schema name="OrdersSchema">
+  <Cube name="Orders" visible="true" cache="true" enabled="true">
+    <Table name="ORDERS">
+    </Table>
+    <Dimension visible="true" highCardinality="false" name="SHIP DESTINATION">
+      <Hierarchy visible="true" hasAll="true" allMemberName="All Destination" defaultMember="All Destination">
+        <Level name="Country" visible="true" column="SHIPCOUNTRY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Region" visible="true" column="SHIPREGION" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="City" visible="true" column="SHIPCITY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension visible="true" foreignKey="EMPLOYEEID" highCardinality="false" name="SHIPPER">
+      <Hierarchy visible="true" hasAll="true" allMemberName="All Employees" primaryKey="ID" defaultMember="All Employees">
+        <Table name="ADDRESS">
+        </Table>
+        <Level name="Name" visible="true" column="LASTNAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="ORDERDATE" highCardinality="false" name="Time">
+      <Hierarchy visible="true" hasAll="false" primaryKey="THE_DATE">
+        <Table name="TIME_BY_DAY">
+        </Table>
+        <Level name="Year" visible="true" column="THE_YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Quarter" visible="true" column="QUARTER" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Month" visible="true" column="MONTH_OF_YEAR" nameColumn="the_month" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Order count" column="ORDERID" formatString="Standard" aggregator="count">
+    </Measure>
+    <Measure name="Total freight" column="FREIGHT" formatString="#,###.00" aggregator="sum">
+    </Measure>
+    <CalculatedMember name="Average" formula="[Measures]. [Total freight]/[Measures].[Order count]" dimension="Measures">
+      <CalculatedMemberProperty name="FORMAT_STRING" value="#,##0.00">
+      </CalculatedMemberProperty>
+    </CalculatedMember>
+  </Cube>
+</Schema>

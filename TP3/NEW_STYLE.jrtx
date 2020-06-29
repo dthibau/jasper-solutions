@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperTemplate xmlns="http://jasperreports.sourceforge.net/jasperreports/template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd">
+	<style name="default" isDefault="true" forecolor="#000000" fontName="Gentium" fontSize="12">
+
+	</style>
+	<style name="Titre" forecolor="#FFFFFF" backcolor="#140A0A" hTextAlign="Center" vTextAlign="Middle" fontName="Gentium" fontSize="22" isBold="true"/>
+	<style name="TitreColonne" isBold="true" isItalic="false" isUnderline="false"/>
+	
+</jasperTemplate>

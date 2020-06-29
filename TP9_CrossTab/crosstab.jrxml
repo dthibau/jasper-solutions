@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-02-02T16:48:25 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="crosstab" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00bfa24d-f860-4b87-9d08-8cb03d3a2924">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="Ik9SREVSUyIgQVMgLDkxLDUyLGJlZTlhMjJmLTNiYWYtNDljNy1iNzU2LWIxN2YzNDQwZmYzMjs="/>
+	<style name="Crosstab_CH" mode="Opaque" backcolor="#C8AE8C">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Crosstab_CG" mode="Opaque" backcolor="#E6DCCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Crosstab_CT" mode="Opaque" backcolor="#806F59">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Crosstab_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CG" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CT" mode="Opaque" backcolor="#005FB3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT "ORDERS"."ORDERID",
+	"ORDERS"."SHIPCOUNTRY",
+	"ORDERS"."SHIPREGION",
+	"ORDERS"."SHIPCITY",
+	"ORDERS"."FREIGHT",
+	"ORDERS"."SHIPPEDDATE"
+FROM "ORDERS"]]>
+	</queryString>
+	<field name="ORDERID" class="java.lang.Integer"/>
+	<field name="SHIPCOUNTRY" class="java.lang.String"/>
+	<field name="SHIPREGION" class="java.lang.String"/>
+	<field name="SHIPCITY" class="java.lang.String"/>
+	<field name="FREIGHT" class="java.math.BigDecimal"/>
+	<field name="SHIPPEDDATE" class="java.sql.Timestamp"/>
+	<summary>
+		<band height="802" splitType="Stretch">
+			<crosstab>
+				<reportElement x="-10" y="0" width="560" height="300" uuid="24b29aca-93ae-4ad5-ba54-5b6e198ec036"/>
+				<rowGroup name="SHIPCOUNTRY1" width="60" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{SHIPCOUNTRY}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="70" uuid="6cfd8c2b-3a91-40b2-b49e-6141681b4fa4"/>
+								<textFieldExpression><![CDATA[$V{SHIPCOUNTRY1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CT">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="20" forecolor="#FFFFFF" uuid="59d20f93-2dca-4c61-a9f8-6dc7177ea6eb"/>
+								<text><![CDATA[Total pour tous les Pays]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="SHIPREGION1" width="60" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{SHIPREGION}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="60" height="40" uuid="feb31396-aae1-4949-b076-51640323476d"/>
+								<textFieldExpression><![CDATA[$V{SHIPREGION1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CG">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="30" uuid="affcdf3e-5431-4224-bf5b-d99d06f15a57"/>
+								<text><![CDATA[Total pour le pays]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="SHIPCITY1" width="60" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{SHIPCITY}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="20" uuid="f6c77c91-b252-4c9c-8a2e-464b2ba24b85"/>
+								<textFieldExpression><![CDATA[$V{SHIPCITY1}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CG">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="20" uuid="3e4f9e16-d306-4f35-8a7c-0c8e7c06fe85"/>
+								<text><![CDATA[Total SHIPCITY1]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="SHIPPEDDATE1" height="20" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[new SimpleDateFormat("yyyy").format($F{SHIPPEDDATE})]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="20" uuid="494c4450-5148-46ce-b197-dc85ff8156c9"/>
+								<textFieldExpression><![CDATA[$V{SHIPPEDDATE1} != null ? $V{SHIPPEDDATE1} : "Non envoyé"]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab_CT">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="5e5a4e49-6f1e-47ef-a24e-545eb6bdef3d"/>
+								<text><![CDATA[Total SHIPPEDDATE1]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="FREIGHT_MEASURE1" class="java.lang.Float" calculation="Sum">
+					<measureExpression><![CDATA[$F{FREIGHT}]]></measureExpression>
+				</measure>
+				<crosstabCell width="60" height="20">
+					<cellContents mode="Opaque" style="Crosstab_CD">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" uuid="2fa218d8-c93d-4ecd-9c2e-9455302b5a08"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" columnTotalGroup="SHIPPEDDATE1">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="df4a9025-3755-49c7-a3f6-7ff072c6e0b2"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="SHIPCOUNTRY1">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="12436226-ac85-4cb0-8405-137a12e94805"/>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="SHIPCOUNTRY1" columnTotalGroup="SHIPPEDDATE1">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="24b26f62-feae-4995-afa6-6f1804a94bd6"/>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="30" rowTotalGroup="SHIPREGION1">
+					<cellContents mode="Opaque" style="Crosstab_CG">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="30" uuid="4d493558-c89b-4b5c-890a-98cec666c887"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="30" rowTotalGroup="SHIPREGION1" columnTotalGroup="SHIPPEDDATE1">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="15" forecolor="#FFFFFF" uuid="cbaf4376-15bc-4339-97c2-73643c00111c"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+						<textField pattern="#,##0.##%">
+							<reportElement mode="Transparent" x="0" y="15" width="60" height="15" backcolor="#E31A17" uuid="02504d5c-beb2-4da2-bf8d-44b4cf7a9935"/>
+							<box>
+								<pen lineWidth="1.0" lineStyle="Dotted"/>
+								<topPen lineWidth="1.0" lineStyle="Dotted"/>
+							</box>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}/$V{FREIGHT_MEASURE1_SHIPCOUNTRY1_SHIPPEDDATE1_ALL}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="SHIPCITY1">
+					<cellContents mode="Opaque" style="Crosstab_CG">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" uuid="4bd13ae5-2f4d-4704-b03b-851f8c5343d2"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="SHIPCITY1" columnTotalGroup="SHIPPEDDATE1">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField pattern="#,##0.###">
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="32375c64-374b-49fd-bc42-5fcf363851ab"/>
+							<textElement>
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{FREIGHT_MEASURE1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

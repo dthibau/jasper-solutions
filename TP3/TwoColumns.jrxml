@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TwoColumns" language="groovy" columnCount="2" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf6ba159-9b6b-4f68-9e4c-edef19357f4c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="38"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="default" isDefault="true" forecolor="#000000" fontName="Gentium" fontSize="12">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{CITY}.equalsIgnoreCase( "paris" )]]></conditionExpression>
+			<style forecolor="#ED1616"/>
+		</conditionalStyle>
+	</style>
+	<style name="Titre" forecolor="#FFFFFF" backcolor="#140A0A" hTextAlign="Center" vTextAlign="Middle" fontName="Gentium" fontSize="22" isBold="true"/>
+	<style name="TitreColonne" isBold="true" isItalic="false" isUnderline="false"/>
+	<queryString>
+		<![CDATA[select * from address order by lastname, firstname]]>
+	</queryString>
+	<field name="FIRSTNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LASTNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement style="Titre" mode="Opaque" x="0" y="0" width="555" height="50" uuid="a1e0507f-fcf1-4fdc-855c-ccc09a97cc97"/>
+				<text><![CDATA[Listing des employés]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52">
+			<staticText>
+				<reportElement style="default" x="198" y="15" width="154" height="20" uuid="ee0cccee-90ca-4d42-9e51-c1514e03ad82"/>
+				<textElement>
+					<font isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Listing des employés]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement style="TitreColonne" mode="Opaque" x="1" y="0" width="275" height="30" backcolor="#D4CBCB" uuid="65336a33-1ef0-4480-b721-c49d2b8a113b">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box padding="3">
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement style="TitreColonne" x="0" y="0" width="135" height="24" uuid="5605c44a-b6b1-4460-8240-29cfffa6b6c2"/>
+					<text><![CDATA[Nom]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TitreColonne" x="135" y="0" width="134" height="24" uuid="211bf7c2-e0cd-4c33-8947-39d3cc0fe512"/>
+					<text><![CDATA[Prénom]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="276" height="27" uuid="afa92396-4505-4224-bd7d-a213b6da5af0">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="0" width="138" height="27" uuid="22c9464a-ac43-4ca4-afe4-6baba22f6813"/>
+					<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="138" y="0" width="138" height="27" uuid="24fc02e7-1275-4c64-95a9-96aa003f880a"/>
+					<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="275" height="23" backcolor="#D4CBCB" uuid="42ace5a7-afad-484a-8c28-0d8f77433788">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<staticText>
+					<reportElement style="TitreColonne" x="0" y="0" width="138" height="23" uuid="961890cc-d7e4-4d26-a2ce-dfe2f862b39c"/>
+					<text><![CDATA[Nom]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="TitreColonne" x="138" y="0" width="137" height="23" uuid="335d3a3d-43f3-47a9-ad3c-6bf00ec64d26"/>
+					<text><![CDATA[Prénom]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement style="default" x="0" y="0" width="271" height="1" uuid="4a3a5015-7c68-44ce-af48-9a7283593c00"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="71" splitType="Stretch">
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy &apos;à&apos; HH&apos;h&apos; mm&apos;mn&apos; ss&apos;s&apos;">
+				<reportElement style="default" x="0" y="33" width="230" height="20" uuid="322e16f0-04e4-4f6c-805a-dcb1cbe3a27a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[NOW( )]]></textFieldExpression>
+			</textField>
+			<image scaleImage="Clip" hAlign="Right" vAlign="Bottom" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement x="304" y="34" width="251" height="20" uuid="96cfa5f6-5b5d-4141-9f78-0b5ab308648c"/>
+				<imageExpression><![CDATA["logo-plb-footer.gif"]]></imageExpression>
+				<hyperlinkReferenceExpression><![CDATA["http://www.plb.fr"]]></hyperlinkReferenceExpression>
+				<hyperlinkTooltipExpression><![CDATA["Vers PLB"]]></hyperlinkTooltipExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

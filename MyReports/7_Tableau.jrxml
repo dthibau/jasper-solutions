@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-10-27T11:27:00 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="7_Tableau" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6430dd7-05b4-450b-91ec-39a466d47e67">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF" hTextAlign="Center" hImageAlign="Center" vTextAlign="Middle" vImageAlign="Middle">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF" hTextAlign="Center" hImageAlign="Center" vTextAlign="Middle" vImageAlign="Middle">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<subDataset name="OrdersByEmploye" uuid="21e45ecd-4a1b-4f62-a2f2-5b2d0b6cf3fd">
+		<parameter name="EMPLOYEEID" class="java.lang.Integer" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT
+     ORDERS."ORDERID" AS ORDERS_ORDERID,
+     ORDERS."CUSTOMERID" AS ORDERS_CUSTOMERID,
+     ORDERS."EMPLOYEEID" AS ORDERS_EMPLOYEEID,
+     ORDERS."ORDERDATE" AS ORDERS_ORDERDATE,
+     ORDERS."REQUIREDDATE" AS ORDERS_REQUIREDDATE,
+     ORDERS."SHIPPEDDATE" AS ORDERS_SHIPPEDDATE,
+     ORDERS."SHIPVIA" AS ORDERS_SHIPVIA,
+     ORDERS."FREIGHT" AS ORDERS_FREIGHT,
+     ORDERS."SHIPNAME" AS ORDERS_SHIPNAME,
+     ORDERS."SHIPADDRESS" AS ORDERS_SHIPADDRESS,
+     ORDERS."SHIPCITY" AS ORDERS_SHIPCITY,
+     ORDERS."SHIPREGION" AS ORDERS_SHIPREGION,
+     ORDERS."SHIPPOSTALCODE" AS ORDERS_SHIPPOSTALCODE,
+     ORDERS."SHIPCOUNTRY" AS ORDERS_SHIPCOUNTRY
+FROM
+     "PUBLIC"."ORDERS" ORDERS
+where ORDERS_EMPLOYEEID = $P{EMPLOYEEID}]]>
+		</queryString>
+		<field name="ORDERS_ORDERID" class="java.lang.Integer"/>
+		<field name="ORDERS_CUSTOMERID" class="java.lang.String"/>
+		<field name="ORDERS_EMPLOYEEID" class="java.lang.Integer"/>
+		<field name="ORDERS_ORDERDATE" class="java.sql.Timestamp"/>
+		<field name="ORDERS_REQUIREDDATE" class="java.sql.Timestamp"/>
+		<field name="ORDERS_SHIPPEDDATE" class="java.sql.Timestamp"/>
+		<field name="ORDERS_SHIPVIA" class="java.lang.Integer"/>
+		<field name="ORDERS_FREIGHT" class="java.math.BigDecimal"/>
+		<field name="ORDERS_SHIPNAME" class="java.lang.String"/>
+		<field name="ORDERS_SHIPADDRESS" class="java.lang.String"/>
+		<field name="ORDERS_SHIPCITY" class="java.lang.String"/>
+		<field name="ORDERS_SHIPREGION" class="java.lang.String"/>
+		<field name="ORDERS_SHIPPOSTALCODE" class="java.lang.String"/>
+		<field name="ORDERS_SHIPCOUNTRY" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from address order by lastname]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="FIRSTNAME" class="java.lang.String"/>
+	<field name="LASTNAME" class="java.lang.String"/>
+	<field name="STREET" class="java.lang.String"/>
+	<field name="CITY" class="java.lang.String"/>
+	<group name="EMPLOYEE">
+		<groupExpression><![CDATA[$F{ID}]]></groupExpression>
+		<groupHeader>
+			<band height="22">
+				<textField>
+					<reportElement x="0" y="0" width="312" height="20" uuid="a71789a7-389a-4f3e-afa4-a2a912628dbf"/>
+					<textFieldExpression><![CDATA[$F{FIRSTNAME} + " " + $F{LASTNAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="802" height="79" uuid="33cf8253-5c13-4d85-a74e-9255c27687b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tableau des commandes par employés"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" stretchType="RelativeToTallestObject" x="0" y="0" width="522" height="18" isRemoveLineWhenBlank="true" uuid="c03859a6-d12e-4985-91b7-ceffc99abae3"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="OrdersByEmploye" uuid="1ff8d3db-f437-40bb-881e-da253d6924a5">
+						<datasetParameter name="EMPLOYEEID">
+							<datasetParameterExpression><![CDATA[$F{ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup width="467" uuid="6f088bde-8c36-45cf-8ea7-d13a73b50b34">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonnes [3]"/>
+						<jr:column width="90" uuid="eba6005b-26fe-49c3-9dc7-63100f378192">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne1"/>
+							<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="33838aa4-ba29-4d52-b621-0eeb3e452876"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[ID]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="436b0630-7c4a-456b-841a-f933b9224bd4"/>
+									<box topPadding="2" leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ORDERS_ORDERID}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="125" uuid="131e19ee-f5f6-44be-b389-33f94faa0b7b">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne2"/>
+							<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="125" height="30" uuid="ed640bf3-b716-49d1-9318-f6bc68713c1f"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Date]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_TD" height="30" rowSpan="1">
+								<textField pattern="dd/MM/yyyy">
+									<reportElement x="0" y="0" width="125" height="20" uuid="640c5142-8f74-48a0-a3d9-9f1944678345"/>
+									<box topPadding="2" leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ORDERS_ORDERDATE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="252" uuid="576f2fab-8277-42db-a46a-8d8834e36b3c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne3"/>
+							<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="252" height="30" uuid="ed640bf3-b716-49d1-9318-f6bc68713c1f"/>
+									<box>
+										<pen lineWidth="0.0"/>
+										<topPen lineWidth="0.0"/>
+										<leftPen lineWidth="0.0"/>
+										<bottomPen lineWidth="0.0"/>
+										<rightPen lineWidth="0.0"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Destination]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="30" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="252" height="30" uuid="640c5142-8f74-48a0-a3d9-9f1944678345"/>
+									<box topPadding="2" leftPadding="2"/>
+									<textFieldExpression><![CDATA[$F{ORDERS_SHIPREGION} != null ? $F{ORDERS_SHIPCOUNTRY} + "/" + $F{ORDERS_SHIPREGION} + "/" + $F{ORDERS_SHIPCITY} : $F{ORDERS_SHIPCOUNTRY} + "/" + $F{ORDERS_SHIPCITY}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="19">
+			<componentElement>
+				<reportElement x="522" y="0" width="280" height="18" uuid="7d9cde69-1869-4edd-aacf-b3494cb6c6fe"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="OrdersByEmploye" uuid="a88a62c4-6bdc-4131-a1df-4bfc09ed5825">
+						<datasetParameter name="EMPLOYEEID">
+							<datasetParameterExpression><![CDATA[$F{ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="280">
+						<textField>
+							<reportElement x="0" y="0" width="280" height="18" uuid="85638f70-b171-48ea-8b40-a11fc8a76424"/>
+							<textFieldExpression><![CDATA[$F{ORDERS_ORDERID} +"/" + $F{ORDERS_SHIPCITY} + "/" + ($F{ORDERS_SHIPREGION} != null ? $F{ORDERS_SHIPCOUNTRY} + "/" + $F{ORDERS_SHIPREGION} + "/" + $F{ORDERS_SHIPCITY} : $F{ORDERS_SHIPCOUNTRY} + "/" + $F{ORDERS_SHIPCITY})]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-10-27T08:16:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4eeb0f2-2e06-4b5d-b6d8-a33e1b983795">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT "ORDERS"."ORDERID",
+	"ORDERS"."SHIPCOUNTRY",
+	"ORDERS"."FREIGHT"
+FROM "ORDERS"
+ORDER BY "ORDERS"."SHIPCOUNTRY" ASC]]>
+	</queryString>
+	<field name="ORDERID" class="java.lang.Integer"/>
+	<field name="SHIPCOUNTRY" class="java.lang.String"/>
+	<field name="FREIGHT" class="java.math.BigDecimal"/>
+	<group name="PAYS">
+		<groupExpression><![CDATA[$F{SHIPCOUNTRY}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="581" splitType="Stretch">
+			<componentElement>
+				<reportElement x="77" y="0" width="400" height="310" uuid="e943c6f5-90a0-4cc5-b7de-f2c2569850ae"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Pie">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="chart.zoomType">
+							<hc:propertyExpression><![CDATA["xy"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.enabled">
+							<hc:propertyExpression><![CDATA[false]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.href">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="plotOptions.pie.showInLegend" value="true"/>
+						<hc:chartProperty name="title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset/>
+						<dataAxis axis="Rows">
+							<axisLevel name="PAYS">
+								<labelExpression><![CDATA[]]></labelExpression>
+								<axisLevelBucket class="java.lang.String">
+									<bucketExpression><![CDATA[$F{SHIPCOUNTRY}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Total" class="java.lang.Integer" calculation="Sum">
+							<labelExpression><![CDATA["Measure label expression"]]></labelExpression>
+							<valueExpression><![CDATA[$F{FREIGHT}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Total"/>
+				</hc:chart>
+			</componentElement>
+			<componentElement>
+				<reportElement x="144" y="400" width="400" height="150" uuid="eaeecfdc-f9e1-4f4d-b3e1-806770d85d6b"/>
+				<fc:chart xmlns:fc="http://jaspersoft.com/fusion" xsi:schemaLocation="http://jaspersoft.com/fusion http://jaspersoft.com/schema/fusion.xsd" type="Doughnut3D">
+					<fc:chartDataset>
+						<fc:item>
+							<fc:labelExpression><![CDATA["Change Me"]]></fc:labelExpression>
+							<fc:valueExpression><![CDATA[new Double(0)]]></fc:valueExpression>
+						</fc:item>
+					</fc:chartDataset>
+				</fc:chart>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

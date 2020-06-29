@@ -1,0 +1,27 @@
+select {[Measures].[Order count], 
+[Measures].[Total freight]} 
+ON COLUMNS,  
+NON EMPTY {([SHIP DESTINATION].[All Destination])} ON ROWS  
+from Orders 
+--------------------------------------
+select {[Measures].[Order count], 
+[Measures].[Total freight]} 
+ON COLUMNS,  
+NON EMPTY {([SHIP DESTINATION].[All Destination], [SHIPPER].[All Employees])} ON ROWS  
+from Orders 
+-------------------------------------------
+select {[Measures].[Order count], 
+[Measures].[Total freight]} 
+ON COLUMNS,  
+NON EMPTY {([SHIP DESTINATION].[All Destination], [SHIPPER].[All Employees])} ON ROWS  
+from Orders 
+where ([Time].[1997])
+---------------------------------------------
+select {[Measures].[Order count], 
+[Measures].[Total freight],
+[Measures].[Average]} 
+ON COLUMNS,  
+NON EMPTY {([SHIP DESTINATION].[All Destination], [SHIPPER].[All Employees])} ON ROWS  
+from Orders 
+where ([Time].[1997])
+------------------------------------------------

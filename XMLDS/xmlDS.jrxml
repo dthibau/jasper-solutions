@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="xmlDS" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6638dd67-63f5-44eb-8f08-10339651c08e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<queryString language="XPath">
+		<![CDATA[/annuaire/personne]]>
+	</queryString>
+	<field name="age_1" class="java.lang.String">
+		<fieldDescription><![CDATA[@age]]></fieldDescription>
+	</field>
+	<field name="firstName_1" class="java.lang.String">
+		<fieldDescription><![CDATA[@firstName]]></fieldDescription>
+	</field>
+	<field name="name_1" class="java.lang.String">
+		<fieldDescription><![CDATA[@name]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="40" uuid="edb6f2e1-7329-4e27-83c1-82fdea9aa6c6">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="0" y="0" width="185" height="40" uuid="91788819-7596-4d70-85c2-a60d0b1b6e10"/>
+					<text><![CDATA[age_1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="185" y="0" width="185" height="40" uuid="bdead0c3-b246-4780-bf43-50e135864e48">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca6110b9-a892-4575-bd9c-b2db13cb1d1a"/>
+					</reportElement>
+					<text><![CDATA[firstName_1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="0" width="185" height="40" uuid="57a24843-0c21-47b6-acdc-6a5386609f82">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="443d1347-d068-4f32-8081-016fece10155"/>
+					</reportElement>
+					<text><![CDATA[name_1]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="261" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="40" uuid="f7f404c6-e04f-4e7b-8a6b-56f44d90a3ef">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="185" height="40" uuid="5179943a-a8f9-4b3d-9de8-ba318d07f8b1"/>
+					<textFieldExpression><![CDATA[$F{age_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="185" y="0" width="185" height="40" uuid="9e48e598-7a58-470c-89b9-c6aec451c8a7">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca6110b9-a892-4575-bd9c-b2db13cb1d1a"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{firstName_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="370" y="0" width="185" height="40" uuid="21bb2068-9a75-45ae-b13a-108168c18bf0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="443d1347-d068-4f32-8081-016fece10155"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{name_1}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<subreport>
+				<reportElement x="50" y="61" width="290" height="79" uuid="1f6b7728-70b6-4398-a894-4da97197fa28"/>
+				<subreportParameter name="XML_DATA_DOCUMENT">
+					<subreportParameterExpression><![CDATA[$P{XML_DATA_DOCUMENT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource() ]]></dataSourceExpression>
+				<subreportExpression><![CDATA["email.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
