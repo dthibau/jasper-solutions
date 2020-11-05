@@ -48,7 +48,7 @@ public class GenerateRapport {
 		}
 		String file = args[0];
 		String country = "France";
-		String language = "FR";
+		String language = "EN";
 		if ( args.length > 1 ) {
 			country = args[1];
 		}
@@ -73,11 +73,14 @@ public class GenerateRapport {
 	}
 	
 	public JasperPrint generate(String fileName, String country, String language)  {
+		System.out.println("Generating "+fileName + "with country="+country + ",language="+language);
+
 		try {
-			File file = new File(
-					getClass().getClassLoader().getResource(fileName).getFile()
-				);
-			JasperDesign design = JRXmlLoader.load(file);
+			Class clazz = GenerateRapport.class;
+			java.io.InputStream inputStream = clazz.getResourceAsStream("/"+fileName);
+			System.out.println(inputStream);
+
+			JasperDesign design = JRXmlLoader.load(inputStream);
 			
 			JasperReport jasperReport = JasperCompileManager.compileReport(design);
 			
