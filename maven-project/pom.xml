@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.11.0</version>
+			<version>6.15.0</version>
 		</dependency>
 
 		<dependency>
@@ -61,7 +61,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                       <manifest>
-                        <mainClass>org.formation.jasper.GenerateRapport</mainClass>
+                        <mainClass>org.formation.jasper.GenerateRapportFromJasper</mainClass>
                       </manifest>
                     </archive>
 

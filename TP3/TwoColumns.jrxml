@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TwoColumns" language="groovy" columnCount="2" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf6ba159-9b6b-4f68-9e4c-edef19357f4c">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TwoColumns" columnCount="2" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf6ba159-9b6b-4f68-9e4c-edef19357f4c">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="38"/>
@@ -51,15 +51,15 @@
 				<reportElement style="TitreColonne" mode="Opaque" x="1" y="0" width="275" height="30" backcolor="#D4CBCB" uuid="65336a33-1ef0-4480-b721-c49d2b8a113b">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
-				<box padding="3">
+				<box padding="2">
 					<bottomPen lineWidth="1.0"/>
 				</box>
 				<staticText>
-					<reportElement style="TitreColonne" x="0" y="0" width="135" height="24" uuid="5605c44a-b6b1-4460-8240-29cfffa6b6c2"/>
+					<reportElement style="TitreColonne" x="0" y="0" width="136" height="26" uuid="5605c44a-b6b1-4460-8240-29cfffa6b6c2"/>
 					<text><![CDATA[Nom]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TitreColonne" x="135" y="0" width="134" height="24" uuid="211bf7c2-e0cd-4c33-8947-39d3cc0fe512"/>
+					<reportElement style="TitreColonne" x="136" y="0" width="135" height="26" uuid="211bf7c2-e0cd-4c33-8947-39d3cc0fe512"/>
 					<text><![CDATA[Prénom]]></text>
 				</staticText>
 			</frame>
@@ -73,6 +73,9 @@
 				</reportElement>
 				<textField isStretchWithOverflow="true">
 					<reportElement x="0" y="0" width="138" height="27" uuid="22c9464a-ac43-4ca4-afe4-6baba22f6813"/>
+					<textElement>
+						<font fontName="DemoGentium"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -88,12 +91,13 @@
 				<reportElement mode="Opaque" x="0" y="0" width="275" height="23" backcolor="#D4CBCB" uuid="42ace5a7-afad-484a-8c28-0d8f77433788">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
+				<box padding="2"/>
 				<staticText>
-					<reportElement style="TitreColonne" x="0" y="0" width="138" height="23" uuid="961890cc-d7e4-4d26-a2ce-dfe2f862b39c"/>
+					<reportElement style="TitreColonne" x="0" y="0" width="136" height="19" uuid="961890cc-d7e4-4d26-a2ce-dfe2f862b39c"/>
 					<text><![CDATA[Nom]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="TitreColonne" x="138" y="0" width="137" height="23" uuid="335d3a3d-43f3-47a9-ad3c-6bf00ec64d26"/>
+					<reportElement style="TitreColonne" x="136" y="0" width="135" height="19" uuid="335d3a3d-43f3-47a9-ad3c-6bf00ec64d26"/>
 					<text><![CDATA[Prénom]]></text>
 				</staticText>
 			</frame>

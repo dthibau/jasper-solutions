@@ -74,28 +74,41 @@
 					<hyperlinkReferenceExpression><![CDATA["http://google.fr"]]></hyperlinkReferenceExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCOUNTRY" pattern="#,##0.00">
-					<reportElement style="SubTitle" x="224" y="0" width="78" height="24" forecolor="#006600" uuid="66897bcf-47e5-4e55-8af5-7b22ce2b9e76"/>
-					<textElement>
+					<reportElement style="SubTitle" x="223" y="0" width="78" height="24" forecolor="#006600" uuid="66897bcf-47e5-4e55-8af5-7b22ce2b9e76"/>
+					<textElement textAlignment="Right">
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{TOTAL_COUNTRY}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCOUNTRY" pattern="###0.00;###0.00-">
-					<reportElement style="SubTitle" x="334" y="0" width="74" height="24" forecolor="#006600" uuid="162aa52f-0078-4abc-97b1-717e54ce574b"/>
-					<textElement>
+					<reportElement style="SubTitle" x="336" y="0" width="74" height="24" forecolor="#006600" uuid="162aa52f-0078-4abc-97b1-717e54ce574b"/>
+					<textElement textAlignment="Right">
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{AVG_COUNTRY}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCOUNTRY" pattern="###0.00;###0.00-">
-					<reportElement style="SubTitle" x="446" y="0" width="78" height="24" forecolor="#006600" uuid="080355de-ba3b-4cfa-9a7b-3093f87c7c91"/>
-					<textElement>
+					<reportElement style="SubTitle" x="444" y="0" width="78" height="24" forecolor="#006600" uuid="080355de-ba3b-4cfa-9a7b-3093f87c7c91"/>
+					<textElement textAlignment="Right">
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{MAX_COUNTRY}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
+		<groupFooter>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<line>
+					<reportElement x="0" y="0" width="555" height="1" forecolor="#000000" uuid="ef55d4a0-5030-48d0-bf25-3d837256ac3a">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Double" lineColor="#006600"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
 	</group>
 	<group name="SHIPREGION">
 		<groupExpression><![CDATA[$F{SHIPREGION}]]></groupExpression>
@@ -113,28 +126,28 @@
 					<anchorNameExpression><![CDATA[$F{SHIPREGION}]]></anchorNameExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPREGION" pattern="###0.00;###0.00-">
-					<reportElement style="SubTitle" x="224" y="0" width="78" height="20" isRemoveLineWhenBlank="true" uuid="4f8b6adc-2d04-4640-83b7-a1699f747d6a">
+					<reportElement style="SubTitle" x="223" y="0" width="78" height="20" isRemoveLineWhenBlank="true" uuid="4f8b6adc-2d04-4640-83b7-a1699f747d6a">
 						<printWhenExpression><![CDATA[$F{SHIPREGION} != null]]></printWhenExpression>
 					</reportElement>
-					<textElement>
+					<textElement textAlignment="Right">
 						<font size="16" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{TOTAL_REGION}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPREGION" pattern="###0.000">
-					<reportElement style="SubTitle" x="337" y="0" width="74" height="20" uuid="2025fc77-d071-4b25-834a-dd524790057f">
+					<reportElement style="SubTitle" x="336" y="0" width="74" height="20" uuid="2025fc77-d071-4b25-834a-dd524790057f">
 						<printWhenExpression><![CDATA[$F{SHIPREGION} != null]]></printWhenExpression>
 					</reportElement>
-					<textElement>
+					<textElement textAlignment="Right">
 						<font size="16" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{AVG_REGION}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPREGION" pattern="###0.00;###0.00-">
-					<reportElement style="SubTitle" x="449" y="0" width="78" height="20" uuid="b9becf10-06bc-4b6f-a6f1-804e0cdd2a0e">
+					<reportElement style="SubTitle" x="444" y="0" width="78" height="20" uuid="b9becf10-06bc-4b6f-a6f1-804e0cdd2a0e">
 						<printWhenExpression><![CDATA[$F{SHIPREGION} != null]]></printWhenExpression>
 					</reportElement>
-					<textElement>
+					<textElement textAlignment="Right">
 						<font size="16" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{MAX_REGION}]]></textFieldExpression>
@@ -162,14 +175,17 @@
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCITY" pattern="###0.00;###0.00-">
 					<reportElement x="223" y="0" width="78" height="20" uuid="49e3c4e1-8fbf-42e8-9f6b-d8340c88e107"/>
+					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$V{TOTAL_CITY}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCITY" pattern="###0.00;###0.00-">
 					<reportElement x="448" y="1" width="74" height="20" uuid="99c4f7de-5ba8-4e64-a2c2-e0a57afbdb9a"/>
+					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$V{MAX_CITY}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Group" evaluationGroup="SHIPCITY" pattern="###0.00;###0.00-">
 					<reportElement x="336" y="0" width="74" height="20" uuid="c668dcce-ad97-4023-8537-da092eafb8e0"/>
+					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$V{AVG_CITY}]]></textFieldExpression>
 				</textField>
 				<line>

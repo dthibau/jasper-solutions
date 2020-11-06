@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GroupsCharts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32843229-4a18-4b59-b4af-95f71e81a314">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -261,6 +261,14 @@ ORDER BY
 						</meterInterval>
 					</meterPlot>
 				</meterChart>
+				<line>
+					<reportElement x="0" y="399" width="555" height="1" forecolor="#000000" uuid="8931d7a6-f914-4954-ab42-d55e5d7fbba1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Double" lineColor="#006600"/>
+					</graphicElement>
+				</line>
 			</band>
 		</groupFooter>
 	</group>

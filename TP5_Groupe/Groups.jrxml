@@ -102,6 +102,14 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{TOTAL_COUNTRY}]]></textFieldExpression>
 				</textField>
+				<line>
+					<reportElement x="0" y="31" width="555" height="1" forecolor="#000000" uuid="e48a4889-8d10-46b7-9c3d-694557d01893">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Double" lineColor="#006600"/>
+					</graphicElement>
+				</line>
 			</band>
 		</groupFooter>
 	</group>
@@ -166,15 +174,18 @@
 			<band height="25">
 				<textField bookmarkLevel="3">
 					<reportElement x="1" y="0" width="221" height="25" uuid="2658defe-9685-40a0-8367-673f879037d3"/>
+					<box topPadding="5"/>
 					<textFieldExpression><![CDATA[$F{SHIPCITY}]]></textFieldExpression>
 					<anchorNameExpression><![CDATA[$F{SHIPCITY}]]></anchorNameExpression>
 				</textField>
 				<textField pattern="###0.00;###0.00-">
-					<reportElement x="449" y="1" width="74" height="20" uuid="230ffa5e-4dda-4348-8e8f-3b63e65a4f17"/>
+					<reportElement x="449" y="0" width="74" height="20" uuid="230ffa5e-4dda-4348-8e8f-3b63e65a4f17"/>
+					<box topPadding="5"/>
 					<textFieldExpression><![CDATA[$V{MAX_CITY}]]></textFieldExpression>
 				</textField>
 				<textField pattern="###0.00;###0.00-">
 					<reportElement x="337" y="0" width="74" height="20" uuid="032ede25-1636-4bb1-869e-04af7d4d9f44"/>
+					<box topPadding="5"/>
 					<textFieldExpression><![CDATA[$V{AVG_CITY}]]></textFieldExpression>
 				</textField>
 				<line>
@@ -188,6 +199,7 @@
 				</line>
 				<textField pattern="###0.00;###0.00-">
 					<reportElement x="224" y="0" width="110" height="25" uuid="0d7fdaf4-32e1-4346-8cf8-33c777e3e920"/>
+					<box topPadding="4"/>
 					<textFieldExpression><![CDATA[$V{TOTAL_CITY}]]></textFieldExpression>
 				</textField>
 			</band>
