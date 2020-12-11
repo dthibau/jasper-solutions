@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-12-11T15:52:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LettreEntete" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8be315e5-7c92-494c-b4e7-ffd08ce7cbfc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[select * from orders
+where ORDERID = 11019
+order by  "ORDERS"."SHIPPEDDATE" 
+]]>
+	</queryString>
+	<field name="ORDERID" class="java.lang.Integer"/>
+	<field name="CUSTOMERID" class="java.lang.String"/>
+	<field name="EMPLOYEEID" class="java.lang.Integer"/>
+	<field name="ORDERDATE" class="java.sql.Timestamp"/>
+	<field name="REQUIREDDATE" class="java.sql.Timestamp"/>
+	<field name="SHIPPEDDATE" class="java.sql.Timestamp"/>
+	<field name="SHIPVIA" class="java.lang.Integer"/>
+	<field name="FREIGHT" class="java.math.BigDecimal"/>
+	<field name="SHIPNAME" class="java.lang.String"/>
+	<field name="SHIPADDRESS" class="java.lang.String"/>
+	<field name="SHIPCITY" class="java.lang.String"/>
+	<field name="SHIPREGION" class="java.lang.String"/>
+	<field name="SHIPPOSTALCODE" class="java.lang.String"/>
+	<field name="SHIPCOUNTRY" class="java.lang.String"/>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="125" uuid="9f6a6dfc-2d5a-47d9-bd05-82e18c797c6a"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Mr <b>" + $F{CUSTOMERID} + "</b><br>" +
+"Nous avons récemment effectué le paiement de vos droits par virement bancaire au titre" + 
+"de vos participations en qualité d’artiste-interprète à des enregistrements diffusés. Vous"  +
+" trouverez sous ce pli le bordereau de règlement correspondant." + 
+"<br><br>Vous pouvez à tout moment consulter et télécharger le détail de vos règlements par" + 
+"dates, titres et types de droits à partir de votre espace personnel sécurisé " +
+"« Mon Compte » sur le site adami.fr."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
